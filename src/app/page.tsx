@@ -395,6 +395,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Work in Progress Gallery */}
+      <section className="py-0">
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="relative">
+            <Image
+              src="/images/sanding-stairs-1.jpg"
+              alt="Professional sanding stairs"
+              width={800}
+              height={533}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="relative">
+            <Image
+              src="/images/painting-cabinets-master-construction-2.jpg"
+              alt="Professional cabinet painting"
+              width={800}
+              height={533}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="relative">
+            <Image
+              src="/images/sanding-staircase.jpg"
+              alt="Sanding staircase railings"
+              width={800}
+              height={533}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="section bg-gray-50">
         <div className="container mx-auto px-4">
