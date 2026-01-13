@@ -115,7 +115,7 @@ const QuoteIcon = () => (
 const PHONE_NUMBER = "(337) 570-1571";
 const PHONE_HREF = "tel:+13375701571";
 const EMAIL = "freshpaintprofessionals@gmail.com";
-const GHL_WEBHOOK_URL = "YOUR_GHL_WEBHOOK_URL_HERE"; // Replace with actual GHL webhook URL
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/N0HCE1gbacbIezi1DiI4/webhook-trigger/a718900b-6afd-4544-9bd6-c56f1c3aa503";
 
 // Services data
 const services = [
