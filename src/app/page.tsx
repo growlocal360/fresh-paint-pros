@@ -282,7 +282,7 @@ export default function Home() {
           isScrolled ? "header-shadow" : ""
         }`}
       >
-        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-8 flex items-center justify-between">
           <a href="/" className="flex-shrink-0">
             <Image
               src="/logos/master-construction-remodeling-contractor-horiz.svg"
