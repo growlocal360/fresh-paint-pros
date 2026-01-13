@@ -11,13 +11,13 @@ const PhoneIcon = () => (
 );
 
 const CheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 );
 
 const StarIcon = ({ filled = true }: { filled?: boolean }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill={filled ? "#fbbf24" : "none"} stroke="#fbbf24" strokeWidth="2">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill={filled ? "#af9b82" : "none"} stroke="#af9b82" strokeWidth="2">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 );
@@ -98,15 +98,8 @@ const MailIcon = () => (
   </svg>
 );
 
-const ArrowRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14"/>
-    <path d="m12 5 7 7-7 7"/>
-  </svg>
-);
-
 const QuoteIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[var(--primary-blue)] opacity-20" viewBox="0 0 24 24" fill="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-accent opacity-30" viewBox="0 0 24 24" fill="currentColor">
     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
   </svg>
 );
@@ -279,10 +272,8 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Promo Banner */}
-      <div className="promo-banner animate-pulse-subtle">
-        <span className="mr-2">🎨</span>
-        <strong>Book Your Spring Painting Projects – Limited Availability!</strong>
-        <span className="ml-2">🎨</span>
+      <div className="promo-banner">
+        <span>Book Your Spring Painting Projects – Limited Availability</span>
       </div>
 
       {/* Sticky Header */}
@@ -303,15 +294,15 @@ export default function Home() {
             />
           </a>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <a
               href={PHONE_HREF}
-              className="hidden sm:flex items-center gap-2 text-[var(--gray-700)] hover:text-[var(--primary-blue)] transition-colors"
+              className="hidden sm:flex items-center gap-2 text-(--gray-600) hover:text-primary transition-colors"
             >
               <PhoneIcon />
-              <span className="font-semibold">{PHONE_NUMBER}</span>
+              <span className="font-medium">{PHONE_NUMBER}</span>
             </a>
-            <button onClick={scrollToForm} className="btn-primary text-sm md:text-base">
+            <button onClick={scrollToForm} className="btn-primary">
               Get Free Estimate
             </button>
           </div>
@@ -319,35 +310,34 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-primary text-white py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-primary text-white py-20 md:py-32 overflow-hidden">
         {/* Background Image Placeholder */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-10">
           {/* PLACEHOLDER: Add a before/after painting hero image here */}
           <div className="w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up text-white">
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up text-white leading-tight">
               Give Your Home the Fresh Start It Deserves
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 mb-8 animate-fade-in-up animate-delay-100">
-              Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers – we bring your vision to life.
+            <p className="text-base md:text-lg opacity-90 mb-10 animate-fade-in-up animate-delay-100 leading-relaxed">
+              Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 animate-fade-in-up animate-delay-200">
-              <button onClick={scrollToForm} className="btn-primary text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-200">
+              <button onClick={scrollToForm} className="btn-primary bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 Get Your Free Estimate
-                <ArrowRightIcon />
               </button>
-              <a href={PHONE_HREF} className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4">
+              <a href={PHONE_HREF} className="btn-secondary border-white/30 text-white hover:bg-white/10 px-8 py-4">
                 <PhoneIcon />
-                <span className="ml-2">Call Now</span>
+                <span>Call Now</span>
               </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animate-delay-300">
+            <div className="flex flex-wrap justify-center gap-3 animate-fade-in-up animate-delay-300">
               <div className="trust-badge">
                 <ShieldIcon />
                 <span>Licensed & Insured</span>
@@ -366,14 +356,14 @@ export default function Home() {
       </section>
 
       {/* Pain Points Section */}
-      <section className="section bg-[var(--gray-50)]">
+      <section className="section bg-white">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Tired of Looking at the Same Old Walls?</h2>
           <p className="section-subtitle">
-            We understand. Your home should be a place you love – not a constant reminder of projects you&apos;ve been putting off.
+            Your home should be a place you love – not a constant reminder of projects you&apos;ve been putting off.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {[
               "Outdated colors that don't match your style anymore",
               "Scuffed, scratched, and worn-out walls",
@@ -384,41 +374,41 @@ export default function Home() {
             ].map((pain, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm"
+                className="flex items-start gap-3 p-5 bg-gray-50 rounded-lg"
               >
-                <div className="w-6 h-6 rounded-full bg-[var(--accent-orange)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-white text-sm">✓</span>
+                <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-white text-xs">✓</span>
                 </div>
-                <p className="text-[var(--gray-700)]">{pain}</p>
+                <p className="text-(--gray-600) text-sm">{pain}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-center mt-8 text-lg text-[var(--gray-600)]">
-            <strong className="text-[var(--primary-blue)]">Good news:</strong> We can fix all of that – and give you a home you&apos;re proud to show off.
+          <p className="text-center mt-10 text-(--gray-600)">
+            <strong className="text-primary">Good news:</strong> We can fix all of that.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="section">
+      <section id="services" className="section bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Our Professional Painting Services</h2>
+          <h2 className="section-title">Our Services</h2>
           <p className="section-subtitle">
-            From prep to final coat, we handle every detail with care. Quality workmanship you can see and feel.
+            From prep to final coat, we handle every detail with care.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="card text-center group"
+                className="card text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[var(--primary-blue)] bg-opacity-10 flex items-center justify-center text-[var(--primary-blue)] group-hover:bg-[var(--primary-blue)] group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-[var(--gray-900)]">{service.title}</h3>
-                <p className="text-[var(--gray-600)]">{service.description}</p>
+                <h3 className="text-lg font-semibold mb-2 text-primary">{service.title}</h3>
+                <p className="text-(--gray-500) text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -426,45 +416,45 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="section bg-gradient-primary text-white">
+      <section className="section bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-white">Why Southwest Louisiana Homeowners Choose Us</h2>
-          <p className="section-subtitle text-blue-100">
-            We&apos;re not just painters – we&apos;re your neighbors. We take pride in serving our community with honesty, quality, and care.
+          <h2 className="section-title">Why Choose Us</h2>
+          <p className="section-subtitle">
+            We&apos;re not just painters – we&apos;re your neighbors, serving our community with quality and care.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 bg-white/10 rounded-lg p-4 backdrop-blur-sm"
+                className="flex items-center gap-3 border border-gray-100 rounded-lg p-4"
               >
                 <CheckIcon />
-                <span className="text-white">{item.text}</span>
+                <span className="text-(--gray-600) text-sm">{item.text}</span>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <button onClick={scrollToForm} className="btn-primary bg-white text-[var(--primary-blue)] hover:bg-[var(--gray-100)]">
-              Get Your Free Estimate Today
+          <div className="text-center mt-12">
+            <button onClick={scrollToForm} className="btn-primary">
+              Get Your Free Estimate
             </button>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="section bg-[var(--gray-50)]">
+      <section id="testimonials" className="section bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="section-title">What Our Customers Say</h2>
           <p className="section-subtitle">
-            Don&apos;t just take our word for it – here&apos;s what homeowners like you have experienced.
+            Here&apos;s what homeowners like you have experienced.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="card relative">
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-6 right-6">
                   <QuoteIcon />
                 </div>
                 <div className="flex gap-0.5 mb-4">
@@ -472,26 +462,26 @@ export default function Home() {
                     <StarIcon key={i} />
                   ))}
                 </div>
-                <p className="text-[var(--gray-700)] mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
-                <div className="border-t border-[var(--gray-200)] pt-4">
-                  <p className="font-semibold text-[var(--gray-900)]">{testimonial.name}</p>
-                  <p className="text-sm text-[var(--gray-500)]">{testimonial.location}</p>
+                <p className="text-(--gray-600) mb-5 text-sm leading-relaxed">&ldquo;{testimonial.text}&rdquo;</p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-medium text-primary">{testimonial.name}</p>
+                  <p className="text-sm text-(--gray-400)">{testimonial.location}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Before/After Gallery Placeholder */}
-          <div className="mt-12">
-            <h3 className="text-xl font-bold text-center mb-6">See Our Work</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div className="mt-16">
+            <h3 className="text-lg font-semibold text-center mb-6 text-primary">See Our Work</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {[1, 2, 3, 4].map((num) => (
                 <div
                   key={num}
                   className="aspect-square rounded-lg image-placeholder"
                 >
                   {/* PLACEHOLDER: Add before/after project image {num} */}
-                  <span>Project Photo {num}</span>
+                  <span>Project {num}</span>
                 </div>
               ))}
             </div>
@@ -500,26 +490,26 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="section">
+      <section id="process" className="section bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Our Simple 4-Step Process</h2>
+          <h2 className="section-title">How It Works</h2>
           <p className="section-subtitle">
-            We make it easy to get started. No hassle, no pressure – just great results.
+            Simple, straightforward, no hassle.
           </p>
 
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {processSteps.map((step, index) => (
               <div key={index} className="text-center relative">
                 {/* Connector line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--gray-200)]" />
+                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-px bg-gray-200" />
                 )}
 
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[var(--primary-blue)] flex items-center justify-center relative z-10">
-                  <span className="text-2xl font-bold text-white">{step.number}</span>
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center relative z-10">
+                  <span className="text-lg font-semibold text-white">{step.number}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-[var(--gray-900)]">{step.title}</h3>
-                <p className="text-[var(--gray-600)] text-sm">{step.description}</p>
+                <h3 className="text-base font-semibold mb-2 text-primary">{step.title}</h3>
+                <p className="text-(--gray-500) text-sm">{step.description}</p>
               </div>
             ))}
           </div>
@@ -527,31 +517,30 @@ export default function Home() {
       </section>
 
       {/* Service Area Section */}
-      <section className="section bg-[var(--gray-50)]">
+      <section className="section bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="section-title">Proudly Serving Southwest Louisiana</h2>
+          <h2 className="section-title">Service Area</h2>
           <p className="section-subtitle">
-            We&apos;re local, and we&apos;re here to serve our neighbors in Jeff Davis Parish, Acadia Parish, and the surrounding areas.
+            Serving Jeff Davis Parish, Acadia Parish, and Southwest Louisiana.
           </p>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             {/* Map Placeholder */}
-            <div className="aspect-video rounded-xl image-placeholder mb-8">
+            <div className="aspect-video rounded-lg image-placeholder mb-10">
               {/* PLACEHOLDER: Add service area map image here */}
               <div className="text-center">
                 <MapPinIcon />
-                <p className="mt-2">Service Area Map</p>
-                <p className="text-sm">Southwest Louisiana</p>
+                <p className="mt-2 text-sm">Service Area Map</p>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-lg font-semibold mb-4 text-[var(--gray-900)]">Cities We Serve:</h3>
+              <h3 className="text-sm font-medium mb-4 text-(--gray-500) uppercase tracking-wide">Cities We Serve</h3>
               <div className="flex flex-wrap justify-center gap-2">
                 {citiesServed.map((city, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-white rounded-full text-[var(--gray-700)] shadow-sm text-sm"
+                    className="px-4 py-2 bg-white rounded-full text-(--gray-600) text-sm border border-gray-100"
                   >
                     {city}
                   </span>
@@ -563,19 +552,19 @@ export default function Home() {
       </section>
 
       {/* Lead Capture Form Section */}
-      <section id="contact-form" className="section bg-gradient-primary text-white">
+      <section id="contact-form" className="section bg-primary text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Transform Your Space?</h2>
-              <p className="text-lg text-blue-100">
-                Get your free, no-obligation estimate today. Most estimates provided within 24-48 hours.
+              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">Get Your Free Estimate</h2>
+              <p className="text-base opacity-80">
+                Most estimates provided within 24-48 hours.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="form-label">
@@ -702,16 +691,16 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="text-center">
+                <div className="text-center pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary text-lg px-10 py-4 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Submitting..." : "Get My Free Estimate"}
+                    {isSubmitting ? "Submitting..." : "Request Free Estimate"}
                   </button>
-                  <p className="mt-4 text-sm text-[var(--gray-500)]">
-                    🔒 Your information is secure and will never be shared.
+                  <p className="mt-4 text-xs text-(--gray-400)">
+                    Your information is secure and will never be shared.
                   </p>
                 </div>
               </form>
@@ -719,10 +708,10 @@ export default function Home() {
 
             {/* Alternative Contact */}
             <div className="text-center mt-8">
-              <p className="text-blue-100 mb-2">Prefer to talk to someone right now?</p>
+              <p className="opacity-70 mb-2 text-sm">Prefer to talk now?</p>
               <a
                 href={PHONE_HREF}
-                className="inline-flex items-center gap-2 text-white text-xl font-bold hover:text-[var(--accent-orange-light)] transition-colors"
+                className="inline-flex items-center gap-2 text-white text-lg font-medium hover:text-accent transition-colors"
               >
                 <PhoneIcon />
                 {PHONE_NUMBER}
@@ -733,58 +722,55 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section bg-[var(--accent-orange)]">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Limited Spots Available This Month!
+      <section className="section bg-accent/10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-xl md:text-2xl font-semibold mb-3 text-primary">
+            Limited Availability This Season
           </h2>
-          <p className="text-lg mb-6 text-orange-100">
-            Spring is our busiest season. Secure your spot now and give your home the refresh it deserves.
+          <p className="text-(--gray-600) mb-6">
+            Secure your spot now for your painting project.
           </p>
           <button
             onClick={scrollToForm}
-            className="btn-primary bg-white text-[var(--accent-orange)] hover:bg-[var(--gray-100)] text-lg"
+            className="btn-primary"
           >
-            Schedule My Free Estimate
+            Schedule Free Estimate
           </button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[var(--gray-900)] text-white py-12">
+      <footer className="bg-primary text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {/* Company Info */}
             <div>
               <Image
                 src="/logos/master-construction-remodeling-contractor-horiz-white.svg"
                 alt="Master Construction"
-                width={200}
-                height={50}
-                className="h-10 w-auto mb-4"
+                width={180}
+                height={45}
+                className="h-9 w-auto mb-4"
               />
-              <p className="text-[var(--gray-400)] mb-4">
-                Professional painting services for residential and light commercial properties in Southwest Louisiana.
+              <p className="text-white/60 text-sm">
+                Professional painting services for residential and light commercial properties.
               </p>
-              <div className="flex gap-4">
-                {/* Social media icons placeholder */}
-              </div>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-bold text-lg mb-4">Contact Us</h4>
+              <h4 className="font-medium text-sm uppercase tracking-wide mb-4 text-white/80">Contact</h4>
               <div className="space-y-3">
                 <a
                   href={PHONE_HREF}
-                  className="flex items-center gap-2 text-[var(--gray-300)] hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
                 >
                   <PhoneIcon />
                   {PHONE_NUMBER}
                 </a>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="flex items-center gap-2 text-[var(--gray-300)] hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
                 >
                   <MailIcon />
                   {EMAIL}
@@ -794,43 +780,32 @@ export default function Home() {
 
             {/* Service Area */}
             <div>
-              <h4 className="font-bold text-lg mb-4">Service Area</h4>
-              <p className="text-[var(--gray-400)]">
-                Proudly serving Jeff Davis Parish, Acadia Parish, and all of Southwest Louisiana.
+              <h4 className="font-medium text-sm uppercase tracking-wide mb-4 text-white/80">Service Area</h4>
+              <p className="text-white/60 text-sm">
+                Jeff Davis Parish, Acadia Parish, and Southwest Louisiana.
               </p>
-              <div className="mt-4">
-                <button
-                  onClick={scrollToForm}
-                  className="btn-primary text-sm"
-                >
-                  Get Free Estimate
-                </button>
-              </div>
             </div>
           </div>
 
-          <div className="border-t border-[var(--gray-800)] mt-8 pt-8 text-center text-[var(--gray-500)] text-sm">
+          <div className="border-t border-white/10 mt-12 pt-8 text-center text-white/50 text-sm">
             <p>© {new Date().getFullYear()} Master Construction. All rights reserved.</p>
-            <p className="mt-2">
-              Serving Southwest Louisiana with professional painting services.
-            </p>
           </div>
         </div>
       </footer>
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-[var(--gray-200)] p-4 z-50">
+      <div className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-gray-100 p-3 z-50">
         <div className="flex gap-3">
           <a
             href={PHONE_HREF}
-            className="btn-secondary flex-1 justify-center py-3"
+            className="btn-secondary flex-1 justify-center py-3 text-sm"
           >
             <PhoneIcon />
-            <span className="ml-2">Call</span>
+            <span>Call</span>
           </a>
           <button
             onClick={scrollToForm}
-            className="btn-primary flex-1 justify-center py-3"
+            className="btn-primary flex-1 justify-center py-3 text-sm"
           >
             Free Estimate
           </button>
@@ -838,7 +813,7 @@ export default function Home() {
       </div>
 
       {/* Bottom padding for mobile sticky CTA */}
-      <div className="h-20 md:hidden" />
+      <div className="h-18 md:hidden" />
     </main>
   );
 }

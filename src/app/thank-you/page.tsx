@@ -9,34 +9,34 @@ export const metadata: Metadata = {
 
 // Icons
 const CheckCircleIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
     <polyline points="22 4 12 14.01 9 11.01"/>
   </svg>
 );
 
 const PhoneIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
   </svg>
 );
 
 const ClockIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="10"/>
     <polyline points="12 6 12 12 16 14"/>
   </svg>
 );
 
 const MailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect width="20" height="16" x="2" y="4" rx="2"/>
     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
   </svg>
 );
 
 const HomeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
     <polyline points="9 22 9 12 15 12 15 22"/>
   </svg>
@@ -49,9 +49,9 @@ const EMAIL = "freshpaintprofessionals@gmail.com";
 
 export default function ThankYou() {
   return (
-    <main className="min-h-screen bg-[var(--gray-50)]">
+    <main className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 py-4">
           <Link href="/" className="inline-block">
             <Image
@@ -67,63 +67,63 @@ export default function ThankYou() {
       </header>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-2xl mx-auto text-center">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="max-w-md mx-auto text-center">
           {/* Success Icon */}
           <div className="flex justify-center mb-6 animate-fade-in-up">
             <CheckCircleIcon />
           </div>
 
           {/* Main Message */}
-          <h1 className="text-3xl md:text-4xl font-bold text-[var(--gray-900)] mb-4 animate-fade-in-up">
-            Thank You for Your Request!
+          <h1 className="text-2xl md:text-3xl font-semibold text-primary mb-3 animate-fade-in-up">
+            Thank You!
           </h1>
-          <p className="text-lg text-[var(--gray-600)] mb-8 animate-fade-in-up">
-            We&apos;ve received your estimate request and we&apos;re excited to help transform your space.
+          <p className="text-(--gray-600) mb-10 animate-fade-in-up">
+            We&apos;ve received your request and will be in touch soon.
           </p>
 
           {/* What Happens Next Box */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8 text-left animate-fade-in-up">
-            <h2 className="text-xl font-bold text-[var(--gray-900)] mb-6 text-center">
-              What Happens Next?
+          <div className="bg-gray-50 rounded-lg p-6 mb-8 text-left animate-fade-in-up">
+            <h2 className="text-sm font-medium text-primary mb-5 text-center uppercase tracking-wide">
+              What Happens Next
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               {/* Step 1 */}
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--primary-blue)] text-white flex items-center justify-center font-bold">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-medium">
                   1
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[var(--gray-900)]">We Review Your Request</h3>
-                  <p className="text-[var(--gray-600)] text-sm">
-                    Our team will review the details you provided about your project.
+                  <h3 className="font-medium text-primary text-sm">We Review Your Request</h3>
+                  <p className="text-(--gray-500) text-sm">
+                    Our team reviews your project details.
                   </p>
                 </div>
               </div>
 
               {/* Step 2 */}
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--primary-blue)] text-white flex items-center justify-center font-bold">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-medium">
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[var(--gray-900)]">We&apos;ll Contact You</h3>
-                  <p className="text-[var(--gray-600)] text-sm">
-                    Expect a call or message within <strong>24-48 hours</strong> (usually sooner!) to discuss your project and schedule an on-site estimate.
+                  <h3 className="font-medium text-primary text-sm">We Contact You</h3>
+                  <p className="text-(--gray-500) text-sm">
+                    Expect a call within <strong>24-48 hours</strong> to schedule your estimate.
                   </p>
                 </div>
               </div>
 
               {/* Step 3 */}
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--primary-blue)] text-white flex items-center justify-center font-bold">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-medium">
                   3
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[var(--gray-900)]">Free On-Site Estimate</h3>
-                  <p className="text-[var(--gray-600)] text-sm">
-                    We&apos;ll visit your home, assess the project, answer your questions, and provide a detailed, no-obligation estimate.
+                  <h3 className="font-medium text-primary text-sm">Free On-Site Estimate</h3>
+                  <p className="text-(--gray-500) text-sm">
+                    We visit your home and provide a detailed, no-obligation estimate.
                   </p>
                 </div>
               </div>
@@ -131,55 +131,49 @@ export default function ThankYou() {
           </div>
 
           {/* Response Time Notice */}
-          <div className="flex items-center justify-center gap-3 bg-blue-50 border border-blue-100 rounded-lg p-4 mb-8 animate-fade-in-up">
+          <div className="flex items-center justify-center gap-2 text-(--gray-500) text-sm mb-8 animate-fade-in-up">
             <ClockIcon />
-            <p className="text-[var(--gray-700)]">
-              <strong>Expected Response Time:</strong> Within 24-48 hours
-            </p>
+            <p>Response within 24-48 hours</p>
           </div>
 
           {/* Need Immediate Assistance */}
-          <div className="bg-[var(--primary-blue)] text-white rounded-2xl p-6 md:p-8 mb-8 animate-fade-in-up">
-            <h2 className="text-xl font-bold mb-4">Need Immediate Assistance?</h2>
-            <p className="text-blue-100 mb-6">
-              Can&apos;t wait? Give us a call right now and speak with someone directly.
+          <div className="bg-primary text-white rounded-lg p-6 mb-8 animate-fade-in-up">
+            <h2 className="text-base font-medium mb-2">Need to talk now?</h2>
+            <p className="text-white/70 text-sm mb-4">
+              Call us directly.
             </p>
 
             <a
               href={PHONE_HREF}
-              className="inline-flex items-center justify-center gap-3 bg-white text-[var(--primary-blue)] font-bold text-xl px-8 py-4 rounded-lg hover:bg-[var(--gray-100)] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary font-medium px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-sm"
             >
               <PhoneIcon />
               {PHONE_NUMBER}
             </a>
-
-            <p className="text-blue-200 text-sm mt-4">
-              Available Monday - Saturday
-            </p>
           </div>
 
           {/* Contact Info */}
-          <div className="grid md:grid-cols-2 gap-4 mb-8 animate-fade-in-up">
+          <div className="grid grid-cols-2 gap-3 mb-8 animate-fade-in-up">
             <a
               href={PHONE_HREF}
-              className="flex items-center justify-center gap-3 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+              className="flex items-center justify-center gap-2 bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors"
             >
               <PhoneIcon />
-              <span className="text-[var(--gray-700)] font-medium">{PHONE_NUMBER}</span>
+              <span className="text-(--gray-600) text-sm">{PHONE_NUMBER}</span>
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="flex items-center justify-center gap-3 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+              className="flex items-center justify-center gap-2 bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors"
             >
               <MailIcon />
-              <span className="text-[var(--gray-700)] font-medium text-sm">{EMAIL}</span>
+              <span className="text-(--gray-600) text-xs truncate">{EMAIL}</span>
             </a>
           </div>
 
           {/* Back to Home */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[var(--primary-blue)] font-medium hover:underline animate-fade-in-up"
+            className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:text-accent transition-colors animate-fade-in-up"
           >
             <HomeIcon />
             Back to Home
@@ -188,20 +182,17 @@ export default function ThankYou() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-[var(--gray-900)] text-white py-8">
+      <footer className="bg-primary text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <Image
             src="/logos/master-construction-remodeling-contractor-horiz-white.svg"
             alt="Master Construction"
-            width={160}
-            height={40}
-            className="h-8 w-auto mx-auto mb-4"
+            width={140}
+            height={35}
+            className="h-7 w-auto mx-auto mb-3"
           />
-          <p className="text-[var(--gray-400)] text-sm">
-            Professional painting services for Southwest Louisiana
-          </p>
-          <p className="text-[var(--gray-500)] text-sm mt-4">
-            © {new Date().getFullYear()} Master Construction. All rights reserved.
+          <p className="text-white/50 text-xs">
+            © {new Date().getFullYear()} Master Construction
           </p>
         </div>
       </footer>
