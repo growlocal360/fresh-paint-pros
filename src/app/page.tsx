@@ -282,7 +282,7 @@ export default function Home() {
           isScrolled ? "header-shadow" : ""
         }`}
       >
-        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <a href="/" className="flex-shrink-0">
             <Image
               src="/logos/master-construction-remodeling-contractor-horiz.svg"
@@ -540,13 +540,18 @@ export default function Home() {
           </p>
 
           <div className="max-w-3xl mx-auto">
-            {/* Map Placeholder */}
-            <div className="aspect-video rounded-lg image-placeholder mb-10">
-              {/* PLACEHOLDER: Add service area map image here */}
-              <div className="text-center">
-                <MapPinIcon />
-                <p className="mt-2 text-sm">Service Area Map</p>
-              </div>
+            {/* Google Maps Embed */}
+            <div className="aspect-video rounded-lg overflow-hidden mb-10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d357907.75676063664!2d-93.43347809059959!3d30.366027962629133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4a57aef495770d75%3A0x3fd0e96e41fb5041!2sMaster%20Construction%20LLC!5e0!3m2!1sen!2sus!4v1768329700925!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Master Construction Service Area Map"
+              />
             </div>
 
             <div className="text-center">
