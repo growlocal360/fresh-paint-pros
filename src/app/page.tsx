@@ -311,10 +311,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-primary text-white py-20 md:py-32 overflow-hidden">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0 opacity-10">
-          {/* PLACEHOLDER: Add a before/after painting hero image here */}
-          <div className="w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/painting-cabinets-master-construction-1.jpg"
+            alt="Master Construction professional painting cabinets"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
