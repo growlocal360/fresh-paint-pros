@@ -319,7 +319,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up text-white leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
               Give Your Home the Fresh Start It Deserves
             </h1>
             <p className="text-base md:text-lg opacity-90 mb-10 animate-fade-in-up animate-delay-100 leading-relaxed">
@@ -327,10 +327,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-200">
-              <button onClick={scrollToForm} className="btn-primary bg-white text-primary hover:bg-gray-100 px-8 py-4">
+              <button onClick={scrollToForm} className="btn-primary px-8 py-4" style={{ backgroundColor: 'white', color: 'var(--primary)' }}>
                 Get Your Free Estimate
               </button>
-              <a href={PHONE_HREF} className="btn-secondary border-white/30 text-white hover:bg-white/10 px-8 py-4">
+              <a href={PHONE_HREF} className="btn-secondary px-8 py-4" style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}>
                 <PhoneIcon />
                 <span>Call Now</span>
               </a>
