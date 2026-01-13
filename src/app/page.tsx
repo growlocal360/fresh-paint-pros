@@ -474,29 +474,32 @@ export default function Home() {
           {/* Before/After Gallery */}
           <div className="mt-16">
             <h3 className="text-lg font-semibold text-center mb-6 text-primary">See Our Work</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="rounded-lg overflow-hidden">
                 <Image
                   src="/images/master-construction-before-after-bathroom.jpg"
                   alt="Bathroom renovation before and after"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
                 />
               </div>
-              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden">
                 <Image
                   src="/images/master-construction-before-after-bathroom-2.jpg"
                   alt="Bathroom transformation before and after"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
                 />
               </div>
-              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden">
                 <Image
                   src="/images/master-construction-before-after-bathroom-3.jpg"
                   alt="Bathroom remodel before and after"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
                 />
               </div>
             </div>
