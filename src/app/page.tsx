@@ -317,7 +317,7 @@ export default function Home() {
             src="/images/painting-cabinets-master-construction-1.jpg"
             alt="Master Construction professional painting cabinets"
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-40"
             priority
           />
         </div>
