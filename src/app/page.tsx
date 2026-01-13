@@ -282,19 +282,19 @@ export default function Home() {
           isScrolled ? "header-shadow" : ""
         }`}
       >
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-5 flex items-center justify-between">
           <a href="/" className="flex-shrink-0">
             <Image
               src="/logos/master-construction-remodeling-contractor-horiz.svg"
               alt="Master Construction"
               width={200}
               height={50}
-              className="h-10 md:h-12 w-auto"
+              className="h-11 md:h-14 w-auto"
               priority
             />
           </a>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-8">
             <a
               href={PHONE_HREF}
               className="hidden sm:flex items-center gap-2 text-(--gray-600) hover:text-primary transition-colors"
@@ -471,19 +471,34 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Before/After Gallery Placeholder */}
+          {/* Before/After Gallery */}
           <div className="mt-16">
             <h3 className="text-lg font-semibold text-center mb-6 text-primary">See Our Work</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {[1, 2, 3, 4].map((num) => (
-                <div
-                  key={num}
-                  className="aspect-square rounded-lg image-placeholder"
-                >
-                  {/* PLACEHOLDER: Add before/after project image {num} */}
-                  <span>Project {num}</span>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/master-construction-before-after-bathroom.jpg"
+                  alt="Bathroom renovation before and after"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/master-construction-before-after-bathroom-2.jpg"
+                  alt="Bathroom transformation before and after"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-4/3 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/master-construction-before-after-bathroom-3.jpg"
+                  alt="Bathroom remodel before and after"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
