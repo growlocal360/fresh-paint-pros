@@ -218,6 +218,17 @@ export default function Home() {
     contactMethod: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [heroFormStep, setHeroFormStep] = useState(1);
+  const [heroFormData, setHeroFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+    projectType: "",
+    description: "",
+    contactMethod: ""
+  });
+  const [isHeroSubmitting, setIsHeroSubmitting] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -269,6 +280,40 @@ export default function Home() {
     document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleHeroInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setHeroFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleHeroSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsHeroSubmitting(true);
+
+    try {
+      const response = await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...heroFormData,
+          source: "Hero Form",
+          timestamp: new Date().toISOString()
+        }),
+      });
+
+      if (response.ok) {
+        window.location.href = "/thank-you";
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch {
+      window.location.href = "/thank-you";
+    } finally {
+      setIsHeroSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen">
       {/* Promo Banner */}
@@ -310,51 +355,232 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-primary text-white py-20 md:py-32 overflow-hidden">
+      <section className="relative text-white py-16 md:py-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/painting-cabinets-master-construction-1.jpg"
             alt="Master Construction professional painting cabinets"
             fill
-            className="object-cover opacity-40"
+            className="object-cover"
             priority
+          />
+          {/* Gradient Overlay - 90% black at top to 10% black at bottom */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%)' }}
           />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
-              Give Your Home the Fresh Start It Deserves
-            </h1>
-            <p className="text-base md:text-lg opacity-90 mb-10 animate-fade-in-up animate-delay-100 leading-relaxed">
-              Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <div className="text-left">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
+                Give Your Home the Fresh Start It Deserves
+              </h1>
+              <p className="text-base md:text-lg opacity-90 mb-8 animate-fade-in-up animate-delay-100 leading-relaxed">
+                Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animate-delay-200">
-              <button onClick={scrollToForm} className="btn-primary px-8 py-4" style={{ backgroundColor: 'white', color: 'var(--primary)' }}>
-                Get Your Free Estimate
-              </button>
-              <a href={PHONE_HREF} className="btn-primary px-8 py-4" style={{ backgroundColor: '#d87716', color: 'white' }}>
-                <PhoneIcon />
-                <span>Call Now</span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-200">
+                <a href={PHONE_HREF} className="btn-primary px-8 py-4" style={{ backgroundColor: '#d87716', color: 'white' }}>
+                  <PhoneIcon />
+                  <span>Call Now</span>
+                </a>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-3 animate-fade-in-up animate-delay-300">
+                <div className="trust-badge">
+                  <ShieldIcon />
+                  <span>Licensed & Insured</span>
+                </div>
+                <div className="trust-badge">
+                  <MapPinIcon />
+                  <span>Locally Owned</span>
+                </div>
+                <div className="trust-badge">
+                  <ClockIcon />
+                  <span>10+ Years Experience</span>
+                </div>
+              </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-3 animate-fade-in-up animate-delay-300">
-              <div className="trust-badge">
-                <ShieldIcon />
-                <span>Licensed & Insured</span>
+            {/* Right Side - Multi-Step Form */}
+            <div className="bg-white rounded-xl p-6 md:p-8 shadow-xl animate-fade-in-up">
+              <h2 className="text-xl font-semibold mb-2 text-primary">Get Your Free Estimate</h2>
+              <p className="text-sm text-gray-500 mb-6">Step {heroFormStep} of 2</p>
+
+              {/* Progress Bar */}
+              <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
+                <div
+                  className="h-2 rounded-full transition-all duration-300"
+                  style={{
+                    width: heroFormStep === 1 ? '50%' : '100%',
+                    backgroundColor: 'var(--accent)'
+                  }}
+                />
               </div>
-              <div className="trust-badge">
-                <MapPinIcon />
-                <span>Locally Owned</span>
-              </div>
-              <div className="trust-badge">
-                <ClockIcon />
-                <span>10+ Years Experience</span>
-              </div>
+
+              <form onSubmit={handleHeroSubmit}>
+                {heroFormStep === 1 ? (
+                  <div className="space-y-4">
+                    {/* Project Type */}
+                    <div>
+                      <label htmlFor="hero-projectType" className="form-label">
+                        Type of Project <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        id="hero-projectType"
+                        name="projectType"
+                        required
+                        value={heroFormData.projectType}
+                        onChange={handleHeroInputChange}
+                        className="form-select"
+                      >
+                        <option value="">Select project type...</option>
+                        <option value="interior">Interior Painting</option>
+                        <option value="exterior">Exterior Painting</option>
+                        <option value="both">Both Interior & Exterior</option>
+                        <option value="cabinets">Cabinet Painting</option>
+                        <option value="not-sure">Not Sure Yet</option>
+                      </select>
+                    </div>
+
+                    {/* Description */}
+                    <div>
+                      <label htmlFor="hero-description" className="form-label">
+                        Tell Us About Your Project (Optional)
+                      </label>
+                      <textarea
+                        id="hero-description"
+                        name="description"
+                        rows={3}
+                        value={heroFormData.description}
+                        onChange={handleHeroInputChange}
+                        className="form-input resize-none"
+                        placeholder="Describe your project, rooms to be painted, color preferences, etc."
+                      />
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setHeroFormStep(2)}
+                      disabled={!heroFormData.projectType}
+                      className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next Step
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {/* Name */}
+                    <div>
+                      <label htmlFor="hero-name" className="form-label">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="hero-name"
+                        name="name"
+                        required
+                        value={heroFormData.name}
+                        onChange={handleHeroInputChange}
+                        className="form-input"
+                        placeholder="John Smith"
+                      />
+                    </div>
+
+                    {/* Phone */}
+                    <div>
+                      <label htmlFor="hero-phone" className="form-label">
+                        Phone Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="hero-phone"
+                        name="phone"
+                        required
+                        value={heroFormData.phone}
+                        onChange={handleHeroInputChange}
+                        className="form-input"
+                        placeholder="(337) 555-0123"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div>
+                      <label htmlFor="hero-email" className="form-label">
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="hero-email"
+                        name="email"
+                        required
+                        value={heroFormData.email}
+                        onChange={handleHeroInputChange}
+                        className="form-input"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+
+                    {/* Address */}
+                    <div>
+                      <label htmlFor="hero-address" className="form-label">
+                        Address or Zip Code <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="hero-address"
+                        name="address"
+                        required
+                        value={heroFormData.address}
+                        onChange={handleHeroInputChange}
+                        className="form-input"
+                        placeholder="123 Main St or 70546"
+                      />
+                    </div>
+
+                    {/* Contact Method */}
+                    <div>
+                      <label htmlFor="hero-contactMethod" className="form-label">
+                        Preferred Contact Method
+                      </label>
+                      <select
+                        id="hero-contactMethod"
+                        name="contactMethod"
+                        value={heroFormData.contactMethod}
+                        onChange={handleHeroInputChange}
+                        className="form-select"
+                      >
+                        <option value="">No preference</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="text">Text Message</option>
+                        <option value="email">Email</option>
+                      </select>
+                    </div>
+
+                    <div className="flex gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setHeroFormStep(1)}
+                        className="btn-secondary flex-1"
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={isHeroSubmitting}
+                        className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isHeroSubmitting ? "Submitting..." : "Get Estimate"}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </div>
