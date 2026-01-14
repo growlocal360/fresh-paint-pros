@@ -358,13 +358,13 @@ export default function Home() {
             src="/images/kitchen-painting-company-lake-charles.jpg"
             alt="Kitchen painting company Lake Charles"
             fill
-            className="object-cover"
+            className="object-cover object-left md:object-center"
             priority
           />
-          {/* Gradient Overlay - 80% black at top to 10% black at bottom */}
+          {/* Gradient Overlay - 70% black at top to 10% black at bottom */}
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.10) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.10) 100%)' }}
           />
         </div>
 
