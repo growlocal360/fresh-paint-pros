@@ -337,7 +337,8 @@ export default function Home() {
           <div className="flex items-center gap-8">
             <a
               href={PHONE_HREF}
-              className="hidden sm:flex items-center gap-2 text-(--gray-600) hover:text-primary transition-colors text-lg"
+              className="hidden sm:flex items-center gap-2 transition-colors text-xl"
+              style={{ color: '#d87716' }}
             >
               <PhoneIcon />
               <span className="font-bold">{PHONE_NUMBER}</span>
@@ -360,10 +361,10 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          {/* Gradient Overlay - 90% black at top to 10% black at bottom */}
+          {/* Gradient Overlay - 80% black at top to 10% black at bottom */}
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%)' }}
           />
         </div>
 
@@ -397,7 +398,7 @@ export default function Home() {
 
             {/* Right Side - Multi-Step Form */}
             <div className="rounded-xl p-6 md:p-8 shadow-xl animate-fade-in-up" style={{ backgroundColor: 'rgba(255, 255, 255, 0.92)' }}>
-              <h2 className="text-xl font-semibold mb-2 text-primary">Get Your Free Estimate</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-primary">Get Your Free Painting Estimate</h2>
               <p className="text-sm text-gray-500 mb-6">Step {heroFormStep} of 2</p>
 
               {/* Progress Bar */}
@@ -831,7 +832,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">Get Your Free Estimate</h2>
+              <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white">Get Your Free Painting Estimate</h2>
               <p className="text-base opacity-80">
                 Most estimates provided within 24-48 hours.
               </p>
