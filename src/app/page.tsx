@@ -170,21 +170,16 @@ const testimonials = [
 const processSteps = [
   {
     number: "1",
-    title: "Contact Us",
-    description: "Fill out our form or give us a call. We'll discuss your project and schedule a convenient time to visit."
+    title: "Free Estimate",
+    description: "We'll schedule to assess your project in person, answer questions, and provide a detailed, no-obligation estimate. Simply call or fill out the form."
   },
   {
     number: "2",
-    title: "Free Estimate",
-    description: "We'll assess your project in person, answer questions, and provide a detailed, no-obligation estimate."
-  },
-  {
-    number: "3",
     title: "We Paint",
     description: "Our professional crew arrives on time, protects your belongings, and completes your project with care."
   },
   {
-    number: "4",
+    number: "3",
     title: "You Love It",
     description: "Walk through your transformed space. We're not done until you're completely satisfied with the results."
   }
@@ -359,7 +354,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/painting-cabinets-master-construction-1.jpg"
+            src="/images/painting-cabinets-master-construction-2.jpg"
             alt="Master Construction professional painting cabinets"
             fill
             className="object-cover"
@@ -408,7 +403,7 @@ export default function Home() {
             </div>
 
             {/* Right Side - Multi-Step Form */}
-            <div className="bg-white rounded-xl p-6 md:p-8 shadow-xl animate-fade-in-up">
+            <div className="rounded-xl p-6 md:p-8 shadow-xl animate-fade-in-up" style={{ backgroundColor: 'rgba(255, 255, 255, 0.92)' }}>
               <h2 className="text-xl font-semibold mb-2 text-primary">Get Your Free Estimate</h2>
               <p className="text-sm text-gray-500 mb-6">Step {heroFormStep} of 2</p>
 
@@ -654,6 +649,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Process Section - How It Works */}
+      <section id="process" className="section bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title">How It Works</h2>
+          <p className="section-subtitle">
+            Simple, straightforward, no hassle.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center relative">
+                {/* Connector line */}
+                {index < processSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-px bg-gray-200" />
+                )}
+
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center relative z-10">
+                  <span className="text-lg font-semibold text-white">{step.number}</span>
+                </div>
+                <h3 className="text-base font-semibold mb-2 text-primary">{step.title}</h3>
+                <p className="text-(--gray-500) text-sm">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="section bg-gray-50">
         <div className="container mx-auto px-4">
@@ -767,33 +789,6 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section id="process" className="section bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="section-title">How It Works</h2>
-          <p className="section-subtitle">
-            Simple, straightforward, no hassle.
-          </p>
-
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                {/* Connector line */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-px bg-gray-200" />
-                )}
-
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center relative z-10">
-                  <span className="text-lg font-semibold text-white">{step.number}</span>
-                </div>
-                <h3 className="text-base font-semibold mb-2 text-primary">{step.title}</h3>
-                <p className="text-(--gray-500) text-sm">{step.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
