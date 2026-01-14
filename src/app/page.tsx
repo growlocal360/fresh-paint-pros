@@ -1073,11 +1073,11 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-gray-100 p-3 z-50">
         <a
           href={PHONE_HREF}
-          className="btn-primary w-full justify-center py-3 text-sm"
+          className="btn-primary w-full justify-center py-4 text-lg font-bold"
           style={{ backgroundColor: '#d87716', color: 'white' }}
         >
           <PhoneIcon />
-          <span>Call Now</span>
+          <span>Call Now for Free Estimate</span>
         </a>
       </div>
 
