@@ -354,8 +354,8 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/painting-cabinets-master-construction-2.jpg"
-            alt="Master Construction professional painting cabinets"
+            src="/images/stair-case-staining-lake-charles-la.jpg"
+            alt="Master Construction staircase staining in Lake Charles LA"
             fill
             className="object-cover"
             priority
