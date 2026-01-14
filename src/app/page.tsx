@@ -378,13 +378,6 @@ export default function Home() {
                 Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-200">
-                <a href={PHONE_HREF} className="btn-primary px-8 py-4" style={{ backgroundColor: '#d87716', color: 'white' }}>
-                  <PhoneIcon />
-                  <span>Call Now</span>
-                </a>
-              </div>
-
               {/* Trust Indicators */}
               <div className="flex flex-wrap gap-3 animate-fade-in-up animate-delay-300">
                 <div className="trust-badge">
