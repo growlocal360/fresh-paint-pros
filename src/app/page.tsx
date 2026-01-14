@@ -371,8 +371,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-left">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
-                Give Your Home the Fresh Start It Deserves
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
+                Give Your Home the Fresh, Professional Paint It Deserves
               </h1>
               <p className="text-base md:text-lg opacity-90 mb-8 animate-fade-in-up animate-delay-100 leading-relaxed">
                 Professional painting services that transform your space. From refreshing a single room to complete interior and exterior makeovers.
