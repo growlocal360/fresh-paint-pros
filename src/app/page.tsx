@@ -355,8 +355,8 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/stair-case-staining-lake-charles-la.jpg"
-            alt="Master Construction staircase staining in Lake Charles LA"
+            src="/images/kitchen-painting-company-lake-charles.jpg"
+            alt="Kitchen painting company Lake Charles"
             fill
             className="object-cover"
             priority
@@ -364,7 +364,7 @@ export default function Home() {
           {/* Gradient Overlay - 80% black at top to 10% black at bottom */}
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.10) 100%)' }}
           />
         </div>
 
