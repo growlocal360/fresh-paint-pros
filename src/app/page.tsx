@@ -337,10 +337,10 @@ export default function Home() {
           <div className="flex items-center gap-8">
             <a
               href={PHONE_HREF}
-              className="hidden sm:flex items-center gap-2 text-(--gray-600) hover:text-primary transition-colors"
+              className="hidden sm:flex items-center gap-2 text-(--gray-600) hover:text-primary transition-colors text-lg"
             >
               <PhoneIcon />
-              <span className="font-medium">{PHONE_NUMBER}</span>
+              <span className="font-bold">{PHONE_NUMBER}</span>
             </a>
             <button onClick={scrollToForm} className="btn-primary">
               Get Free Estimate
@@ -367,8 +367,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Side - Text Content */}
             <div className="text-left">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
