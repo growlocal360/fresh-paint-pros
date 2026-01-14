@@ -1078,22 +1078,14 @@ export default function Home() {
 
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-gray-100 p-3 z-50">
-        <div className="flex gap-3">
-          <a
-            href={PHONE_HREF}
-            className="btn-primary flex-1 justify-center py-3 text-sm"
-            style={{ backgroundColor: '#d87716', color: 'white' }}
-          >
-            <PhoneIcon />
-            <span>Call</span>
-          </a>
-          <button
-            onClick={scrollToForm}
-            className="btn-primary flex-1 justify-center py-3 text-sm"
-          >
-            Free Estimate
-          </button>
-        </div>
+        <a
+          href={PHONE_HREF}
+          className="btn-primary w-full justify-center py-3 text-sm"
+          style={{ backgroundColor: '#d87716', color: 'white' }}
+        >
+          <PhoneIcon />
+          <span>Call Now</span>
+        </a>
       </div>
 
       {/* Bottom padding for mobile sticky CTA */}
