@@ -371,7 +371,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="text-left">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up leading-tight" style={{ color: 'white' }}>
                 Give Your Home the Fresh, Professional Paint It Deserves
               </h1>
               <p className="text-base md:text-lg opacity-90 mb-8 animate-fade-in-up animate-delay-100 leading-relaxed">
