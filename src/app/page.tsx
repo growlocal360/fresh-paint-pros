@@ -335,7 +335,7 @@ export default function Home() {
               <button onClick={scrollToForm} className="btn-primary px-8 py-4" style={{ backgroundColor: 'white', color: 'var(--primary)' }}>
                 Get Your Free Estimate
               </button>
-              <a href={PHONE_HREF} className="btn-secondary px-8 py-4" style={{ borderColor: 'rgba(255,255,255,0.5)', color: 'white' }}>
+              <a href={PHONE_HREF} className="btn-primary px-8 py-4" style={{ backgroundColor: '#d87716', color: 'white' }}>
                 <PhoneIcon />
                 <span>Call Now</span>
               </a>
@@ -772,7 +772,8 @@ export default function Home() {
               <p className="opacity-70 mb-2 text-sm">Prefer to talk now?</p>
               <a
                 href={PHONE_HREF}
-                className="inline-flex items-center gap-2 text-white text-lg font-medium hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-lg font-medium transition-colors"
+                style={{ color: '#d87716' }}
               >
                 <PhoneIcon />
                 {PHONE_NUMBER}
@@ -859,7 +860,8 @@ export default function Home() {
         <div className="flex gap-3">
           <a
             href={PHONE_HREF}
-            className="btn-secondary flex-1 justify-center py-3 text-sm"
+            className="btn-primary flex-1 justify-center py-3 text-sm"
+            style={{ backgroundColor: '#d87716', color: 'white' }}
           >
             <PhoneIcon />
             <span>Call</span>
