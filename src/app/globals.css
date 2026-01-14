@@ -142,7 +142,7 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
   background: var(--primary);
   color: var(--white);
   font-weight: 500;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   border-radius: 0.375rem;
   border: none;
   cursor: pointer;
@@ -167,7 +167,7 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
   background: transparent;
   color: var(--primary);
   font-weight: 500;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   border-radius: 0.375rem;
   border: 1.5px solid var(--primary);
   cursor: pointer;
@@ -207,7 +207,7 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
   font-weight: 500;
   color: var(--gray-700);
   margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .form-select {
@@ -266,7 +266,7 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
 }
 
 .section-title {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -276,15 +276,15 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
   }
 }
 
 .section-subtitle {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   text-align: center;
   color: var(--gray-500);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto 3.5rem;
   line-height: 1.7;
 }
@@ -310,7 +310,7 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
   padding: 0.625rem 1rem;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--white);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -351,13 +351,13 @@ h4:not(.text-white), h5:not(.text-white), h6:not(.text-white) {
   text-align: center;
   padding: 0.75rem 1rem;
   font-weight: 500;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   letter-spacing: 0.01em;
 }
 
 @media (min-width: 768px) {
   .promo-banner {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }
 
